@@ -1,0 +1,56 @@
+@Metadata.layer: #CORE
+@UI.headerInfo:{
+typeName: 'User File',
+typeNamePlural: 'User files',
+title:{type: #STANDARD,value: 'FileId'}
+}
+
+annotate entity ZSA_EXCEL_USER_C
+    with 
+{
+@UI.facet: [
+{id: 'idEndUser',   purpose: #HEADER,  position: 10,
+type: #DATAPOINT_REFERENCE, targetQualifier: 'tqEndUser'  
+},
+{id: 'idChgAt',   purpose: #HEADER,  position: 20,
+type: #DATAPOINT_REFERENCE, targetQualifier: 'tqChgAt'  
+},
+{id: 'idStatus',   purpose: #HEADER,  position: 30,
+type: #DATAPOINT_REFERENCE, targetQualifier: 'tqStatus'  
+},
+{id: 'idFile',   purpose: #HEADER,  position: 50,
+label: 'File Upload', type: #IDENTIFICATION_REFERENCE  
+},
+{id: 'idData',   purpose: #HEADER,  position: 60,
+label: 'Excel Data' , type: #LINEITEM_REFERENCE ,
+targetElement: '_XLData'
+ }]
+ 
+ @UI.dataPoint:{ qualifier: 'tqEndUser', title: 'Person Responsible' }
+ @UI.identification: [{ type: #FOR_ACTION , label: 'Upload Data', dataAction: 'uploadExcelData'  }]
+ EndUser;
+ 
+ //FileId;
+ @UI.lineItem: [{ position: 20 , label: 'File Status'  }]
+ @UI.dataPoint:{ qualifier: 'tqStatus', title: 'File Status'}
+ FileStatus;
+ @UI.identification: [{ position: 30 , label: 'Select Excel file to upload'  }]
+ Attachment;
+ @UI.hidden: true
+ Mimetype;
+ @UI.lineItem: [{ position: 40 , label: 'Filename'  }]
+  Filename;
+ @UI.hidden: true
+ LocalCreatedBy;
+ @UI.hidden: true
+ LocalCreatedAt;
+  @UI.hidden: true
+ LocalLastChangedBy;
+  @UI.hidden: true
+ LocalLastChangedAt;
+  @UI.hidden: true
+ LastChangedAt;
+ /* Associations */
+  @UI.hidden: true
+ _XLDATA;
+}

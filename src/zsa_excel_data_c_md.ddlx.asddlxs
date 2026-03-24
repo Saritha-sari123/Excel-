@@ -1,0 +1,38 @@
+@Metadata.layer: #CORE
+@UI.headerInfo :{
+typeName: 'File Data',
+typeNamePlural: 'File Data',
+title: { type: #STANDARD ,  value: 'EndUser' },
+description:{type: #STANDARD , value: 'FileId'}
+}
+annotate entity zsa_excel_data_c
+    with 
+{
+@UI.hidden: true
+@UI.lineItem: [{ type: #FOR_ACTION, label: 'Process Data', dataAction: 'processData'  }
+ //, {type: #FOR_ACTION, label: 'Upload Data', dataAction: 'uploadXLData' }
+ ]
+ EndUser;
+@UI.hidden: true
+ FileId;
+//  @UI.lineItem: [{position: 10 , label: 'Line'  }]
+// LineId;
+ @UI.lineItem: [{position: 10 , label: 'Line'  }]
+ LineNumber;
+ @UI.lineItem: [{position: 20 , label: 'PO Num'  }]
+ 
+ PoNumber;
+ @UI.lineItem: [{position: 30 , label: 'PO Item'  }]
+ PoItem;
+ @UI.lineItem: [{position: 40 , label: 'Quantity'  }]
+ GrQuantity;
+ @UI.lineItem: [{position: 50 , label: 'UoM'  }]
+ UnitOfMeasure;
+ @UI.lineItem: [{position: 60 , label: 'SiteId'  }]
+ SiteId;
+ @UI.lineItem: [{position: 70 , label: 'Header Text'  }]
+ HeaderText;
+ /* Associations */
+// _XLUser; 
+    
+}
