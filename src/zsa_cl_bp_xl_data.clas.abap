@@ -1,0 +1,5 @@
+CLASS zsa_cl_bp_xl_data DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zsa_excel_user_i.
+ENDCLASS.
+
+CLASS zsa_cl_bp_xl_data IMPLEMENTATION.
+ENDCLASS.
