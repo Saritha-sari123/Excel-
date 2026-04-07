@@ -1,0 +1,52 @@
+@Metadata.layer: #CORE
+@UI.headerInfo:{
+            typeName: 'File Data',
+            typeNamePlural: 'File Data',
+            title:{ type: #STANDARD, value: 'EndUser' },
+            description:{ type: #STANDARD, value: 'FileId' }
+            }
+annotate entity ZSA_EXCEL_DATA_C
+    with 
+{
+      @UI.facet: [{
+        id: 'idDetails',
+        purpose: #STANDARD,
+        position: 10,
+        label: 'Contact Details',
+        type: #IDENTIFICATION_REFERENCE
+    }]
+    
+  @UI.hidden: true    
+EndUser;
+  @UI.hidden: true
+FileId;
+  @UI.lineItem: [{ position: 10, label: 'Line Id' }]
+  @UI.identification: [{ position: 10, label: 'Line Id' }]
+LineId;
+  @UI.lineItem: [{ position: 20, label: 'Line No' }]
+  @UI.identification: [{ position: 20, label: 'Line no' }]
+Linenum;
+  @UI.lineItem: [{ position: 30, label: 'PoNumber' }]
+  @UI.identification: [{ position: 30, label: 'PoNumber' }]
+PoNumber;
+  @UI.lineItem: [{ position: 40, label: 'PoItem' }]
+  @UI.identification: [{ position: 40, label: 'PoItem' }]
+  
+PoItem;
+  @UI.lineItem: [{ position: 50, label: 'Quantity' }]
+  @UI.identification: [{ position: 50, label: 'Quantity' }]
+GrQuantity;
+ @UI.lineItem: [{ position: 50, label: 'UoM' }]
+  @UI.identification: [{ position: 50, label: 'UoM' }]
+UnitOfMeasure;
+@UI.lineItem: [{ position: 60, label: 'SiteId' }]
+  @UI.identification: [{ position: 60, label: 'SiteId' }]
+SiteId;
+ @UI.lineItem: [{ position: 70, label: 'HeaderText' }]
+  @UI.identification: [{ position: 70, label: 'HeaderText' }]
+HeaderText;
+/* Associations */
+  @UI.hidden: true
+_XLUser;
+    
+}

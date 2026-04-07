@@ -1,0 +1,5 @@
+@EndUserText.label: 'Service defintion for root user'
+define service ZSA_EXCEL_USER_C_SD {
+  expose ZSA_EXCEL_USER_C;
+  expose ZSA_EXCEL_DATA_C;
+}

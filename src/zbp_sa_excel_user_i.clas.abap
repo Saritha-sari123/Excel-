@@ -1,0 +1,5 @@
+CLASS zbp_sa_excel_user_i DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zsa_excel_user_i.
+ENDCLASS.
+
+CLASS zbp_sa_excel_user_i IMPLEMENTATION.
+ENDCLASS.
